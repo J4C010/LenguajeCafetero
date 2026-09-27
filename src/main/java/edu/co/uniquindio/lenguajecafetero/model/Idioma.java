@@ -1,4 +1,4 @@
-package co.edu.uniquindio.lenguajecafetero.model;
+package edu.co.uniquindio.lenguajecafetero.model;
 
 public enum Idioma {
     INGLES("Inglés"), FRANCES("Francés"), PORTUGUES("Portugués");

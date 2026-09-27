@@ -1,4 +1,4 @@
-package co.edu.uniquindio.lenguajecafetero.model;
+package edu.co.uniquindio.lenguajecafetero.model;
 
 /**
  * Estrategia de descuento aplicable a una matrícula (OCP + DIP): la matrícula depende

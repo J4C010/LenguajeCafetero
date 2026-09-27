@@ -1,9 +1,9 @@
-package co.edu.uniquindio.lenguajecafetero.model;
+package edu.co.uniquindio.lenguajecafetero.model;
 
-/** Utilidades de validación usadas por las entidades del dominio. */
+///** Utilidades de validación usadas por las entidades del dominio. */
 public final class Validaciones {
-
-    private Validaciones() { }
+//
+//    private Validaciones() { }
 
     public static String requerido(String valor, String campo) {
         if (valor == null || valor.isBlank()) {

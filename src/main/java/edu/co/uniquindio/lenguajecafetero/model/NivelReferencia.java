@@ -1,4 +1,4 @@
-package co.edu.uniquindio.lenguajecafetero.model;
+package edu.co.uniquindio.lenguajecafetero.model;
 
 /** Niveles del Marco Común Europeo de Referencia. */
 public enum NivelReferencia {
