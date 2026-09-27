@@ -1,52 +1,45 @@
-package edu.co.uniquindio.lenguajecafetero.model;
+package co.edu.uniquindio.lenguajecafetero.model;
 
-public class ServicioAdicional implements  Cloneable{
-    private String codigo;
+import java.util.Objects;
+
+/** Simulacro de certificación, tutoría de refuerzo, material impreso, talleres, etc. */
+public class ServicioAdicional {
+
+    private final String codigo;
     private String nombre;
     private String descripcion;
     private double precio;
     private boolean disponible;
 
-    public ServicioAdicional(String codigo, String nombre, String descripcion, double precio, boolean disponible) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.precio = precio;
+    public ServicioAdicional(String codigo, String nombre, String descripcion,
+                             double precio, boolean disponible) {
+        this.codigo = Validaciones.requerido(codigo, "El código");
+        this.nombre = Validaciones.requerido(nombre, "El nombre");
+        this.descripcion = descripcion == null ? "" : descripcion;
+        this.precio = Validaciones.noNegativo(precio, "El precio");
         this.disponible = disponible;
     }
-    // implementamos el patrón prototype que nos perimite clonar el servicio a una matricula
+
+
+    public String getCodigo() { return codigo; }
+    public String getNombre() { return nombre; }
+    public String getDescripcion() { return descripcion; }
+    public double getPrecio() { return precio; }
+    public boolean isDisponible() { return disponible; }
+
+    public void setNombre(String nombre) { this.nombre = Validaciones.requerido(nombre, "El nombre"); }
+    public void setDescripcion(String d) { this.descripcion = d; }
+    public void setPrecio(double precio) { this.precio = Validaciones.noNegativo(precio, "El precio"); }
+    public void setDisponible(boolean disponible) { this.disponible = disponible; }
+
     @Override
-    public  ServicioAdicional clone (){
-        try {
-            return (ServicioAdicional) super.clone();
-        }
-        catch (CloneNotSupportedException e){
-            return new ServicioAdicional(this.codigo, this.nombre, this.descripcion, this.precio, this.disponible);
-        }
-    }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public boolean isDisponible() {
-        return disponible;
+    public boolean equals(Object o) {
+        return o instanceof ServicioAdicional s && codigo.equals(s.codigo);
     }
 
     @Override
-    public String toString(){
-        return nombre + "(" + precio +")";
-    }
+    public int hashCode() { return Objects.hash(codigo); }
+
+    @Override
+    public String toString() { return nombre + " ($" + String.format("%,.0f", precio) + ")"; }
 }

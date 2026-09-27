@@ -1,7 +1,5 @@
-package edu.co.uniquindio.lenguajecafetero.model;
+package co.edu.uniquindio.lenguajecafetero.model;
 
 public enum EstadoCurso {
-    ACTIVO,
-    SUSPENDIDO,
-    FINALIZADO
+    ACTIVO, SUSPENDIDO, FINALIZADO
 }

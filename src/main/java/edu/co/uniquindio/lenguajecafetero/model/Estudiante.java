@@ -1,51 +1,26 @@
-package edu.co.uniquindio.model;
+package co.edu.uniquindio.lenguajecafetero.model;
 
 import java.time.LocalDate;
 
-public class Estudiante {
-    private String nombreCompleto;
-    private String documento;
-    private String telefono;
-    private String correoElectronico;
+public class Estudiante extends Persona {
+
+    private String correo;
     private int edad;
-    private LocalDate fRegistro;
+    private final LocalDate fechaRegistro;
 
-    public Estudiante (String nombreCompleto, String documento, String telefono, String correoElectronico, int edad, LocalDate fRegistro){
-        this.nombreCompleto = nombreCompleto;
-        this.documento = documento;
-        this.telefono = telefono;
-        this.correoElectronico = correoElectronico;
-        this.edad = edad;
-        this.fRegistro = fRegistro;
+    public Estudiante(String documento, String nombreCompleto, String telefono,
+                      String correo, int edad, LocalDate fechaRegistro) {
+        super(documento, nombreCompleto, telefono);
+        this.correo = Validaciones.correo(correo);
+        this.edad = Validaciones.positivo(edad, "La edad");
+        this.fechaRegistro = fechaRegistro != null ? fechaRegistro : LocalDate.now();
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
-    }
+    public String getDocumento() { return getIdentificacion(); }
+    public String getCorreo() { return correo; }
+    public int getEdad() { return edad; }
+    public LocalDate getFechaRegistro() { return fechaRegistro; }
 
-    public String getDocumento() {
-        return documento;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public String getCorreoElectronico() {
-        return correoElectronico;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public LocalDate getfRegistro() {
-        return fRegistro;
-    }
-
-    @Override
-    public String toString (){
-        return nombreCompleto + "("+ documento +")";
-    }
-
+    public void setCorreo(String correo) { this.correo = Validaciones.correo(correo); }
+    public void setEdad(int edad) { this.edad = Validaciones.positivo(edad, "La edad"); }
 }
