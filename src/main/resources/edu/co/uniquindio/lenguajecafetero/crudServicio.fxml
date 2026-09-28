@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="10.0" prefWidth="780.0" prefHeight="560.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.co.uniquindio.lenguajecafetero.viewController.ServicioViewController">
+   <children>
+      <Label text="Servicios adicionales">
+         <font><Font name="System Bold" size="18.0" /></font>
+      </Label>
+      <GridPane hgap="10.0" vgap="8.0">
+         <columnConstraints>
+            <ColumnConstraints minWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints minWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+         </columnConstraints>
+         <children>
+            <Label text="Código:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <TextField fx:id="txtCodigo" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+            <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+            <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+            <Label text="Descripción:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <TextField fx:id="txtDescripcion" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="3" />
+            <Label text="Precio:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <TextField fx:id="txtPrecio" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+            <CheckBox fx:id="chkDisponible" selected="true" text="Disponible" GridPane.rowIndex="2" GridPane.columnIndex="3" />
+         </children>
+      </GridPane>
+      <HBox spacing="10.0">
+         <children>
+            <Button onAction="#onAgregarServicio" text="Agregar servicio" />
+            <Button onAction="#onActualizarServicio" text="Actualizar servicio" />
+            <Button onAction="#onEliminar" text="Eliminar" />
+            <Button onAction="#onLimpiar" text="Limpiar" />
+         </children>
+      </HBox>
+      <TableView fx:id="tblListServicio" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="tbcCodigo" prefWidth="80.0" text="Código" />
+            <TableColumn fx:id="tbcNombre" prefWidth="180.0" text="Nombre" />
+            <TableColumn fx:id="tbcDescripcion" prefWidth="240.0" text="Descripción" />
+            <TableColumn fx:id="tbcPrecio" prefWidth="120.0" text="Precio" />
+            <TableColumn fx:id="tbcDisponible" prefWidth="90.0" text="Disponible" />
+         </columns>
+      </TableView>
+      <Button onAction="#onVolver" text="← Volver al menú" />
+   </children>
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+</VBox>

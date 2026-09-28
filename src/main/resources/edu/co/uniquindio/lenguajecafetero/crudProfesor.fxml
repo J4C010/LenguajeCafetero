@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="10.0" prefWidth="780.0" prefHeight="620.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.co.uniquindio.lenguajecafetero.viewController.ProfesorViewController">
+   <children>
+      <Label text="Gestión de profesores">
+         <font><Font name="System Bold" size="18.0" /></font>
+      </Label>
+      <GridPane hgap="10.0" vgap="8.0">
+         <columnConstraints>
+            <ColumnConstraints minWidth="120.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints minWidth="120.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+         </columnConstraints>
+         <children>
+            <Label text="Identificación:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <TextField fx:id="txtIdentificacion" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+            <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+            <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+            <Label text="Idioma que enseña:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <ComboBox fx:id="cbIdioma" maxWidth="Infinity" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+            <Label text="Teléfono:" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+            <TextField fx:id="txtTelefono" GridPane.rowIndex="1" GridPane.columnIndex="3" />
+            <Label text="Tarifa por sesión:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <TextField fx:id="txtTarifa" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <HBox spacing="10.0">
+         <children>
+            <Button onAction="#onAgregarProfesor" text="Agregar profesor" />
+            <Button onAction="#onActualizarProfesor" text="Actualizar profesor" />
+            <Button onAction="#onEliminar" text="Eliminar" />
+            <Button onAction="#onLimpiar" text="Limpiar" />
+         </children>
+      </HBox>
+      <TableView fx:id="tblListProfesor" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="tbcIdentificacion" prefWidth="120.0" text="Identificación" />
+            <TableColumn fx:id="tbcNombre" prefWidth="200.0" text="Nombre" />
+            <TableColumn fx:id="tbcIdioma" prefWidth="110.0" text="Idioma" />
+            <TableColumn fx:id="tbcTelefono" prefWidth="120.0" text="Teléfono" />
+            <TableColumn fx:id="tbcTarifa" prefWidth="130.0" text="Tarifa/sesión" />
+         </columns>
+      </TableView>
+      <Label text="Estudiantes asignados al profesor seleccionado (estudiante – curso – profesor):" />
+      <ListView fx:id="lstAsignaciones" prefHeight="100.0" />
+      <Button onAction="#onVolver" text="← Volver al menú" />
+   </children>
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+</VBox>

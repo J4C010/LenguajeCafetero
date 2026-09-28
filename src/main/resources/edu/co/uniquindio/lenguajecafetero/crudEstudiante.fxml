@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="10.0" prefWidth="820.0" prefHeight="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.co.uniquindio.lenguajecafetero.viewController.EstudianteViewController">
+   <children>
+      <Label text="Gestión de estudiantes">
+         <font><Font name="System Bold" size="18.0" /></font>
+      </Label>
+      <GridPane hgap="10.0" vgap="8.0">
+         <columnConstraints>
+            <ColumnConstraints minWidth="120.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints minWidth="120.0" />
+            <ColumnConstraints hgrow="ALWAYS" />
+         </columnConstraints>
+         <children>
+            <Label text="Documento:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <TextField fx:id="txtDocumento" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+            <Label text="Nombre completo:" GridPane.rowIndex="0" GridPane.columnIndex="2" />
+            <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+            <Label text="Teléfono:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <TextField fx:id="txtTelefono" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+            <Label text="Correo:" GridPane.rowIndex="1" GridPane.columnIndex="2" />
+            <TextField fx:id="txtCorreo" GridPane.rowIndex="1" GridPane.columnIndex="3" />
+            <Label text="Edad:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <TextField fx:id="txtEdad" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+            <Label text="Fecha de registro:" GridPane.rowIndex="2" GridPane.columnIndex="2" />
+            <DatePicker fx:id="dpFechaRegistro" maxWidth="Infinity" GridPane.rowIndex="2" GridPane.columnIndex="3" />
+         </children>
+      </GridPane>
+      <HBox spacing="10.0">
+         <children>
+            <Button onAction="#onAgregarEstudiante" text="Agregar estudiante" />
+            <Button onAction="#onActualizarEstudiante" text="Actualizar estudiante" />
+            <Button onAction="#onEliminar" text="Eliminar" />
+            <Button onAction="#onLimpiar" text="Limpiar" />
+         </children>
+      </HBox>
+      <Separator />
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label text="Buscar por documento:" />
+            <TextField fx:id="txtBuscarDocumento" onAction="#onBuscarEstudiante" prefWidth="200.0" />
+            <Button onAction="#onBuscarEstudiante" text="Buscar" />
+         </children>
+      </HBox>
+      <Label fx:id="lblResultadoBusqueda" wrapText="true" />
+      <TableView fx:id="tblListEstudiante" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="tbcDocumento" prefWidth="110.0" text="Documento" />
+            <TableColumn fx:id="tbcNombre" prefWidth="180.0" text="Nombre" />
+            <TableColumn fx:id="tbcTelefono" prefWidth="110.0" text="Teléfono" />
+            <TableColumn fx:id="tbcCorreo" prefWidth="180.0" text="Correo" />
+            <TableColumn fx:id="tbcEdad" prefWidth="60.0" text="Edad" />
+            <TableColumn fx:id="tbcFechaRegistro" prefWidth="120.0" text="Fecha registro" />
+         </columns>
+      </TableView>
+      <Button onAction="#onVolver" text="← Volver al menú" />
+   </children>
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+</VBox>

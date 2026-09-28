@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="10.0" prefWidth="760.0" prefHeight="520.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.co.uniquindio.lenguajecafetero.viewController.IngresosViewController">
+   <children>
+      <Label text="Ingresos por matrículas en un periodo">
+         <font><Font name="System Bold" size="18.0" /></font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label text="Fecha inicial:" />
+            <DatePicker fx:id="dpFechaInicial" />
+            <Label text="Fecha final:" />
+            <DatePicker fx:id="dpFechaFinal" />
+            <Button onAction="#onCalcularIngresos" text="Calcular ingresos" />
+         </children>
+      </HBox>
+      <Label fx:id="lblTotal" style="-fx-font-weight: bold; -fx-font-size: 15px;" />
+      <TableView fx:id="tblMatriculas" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="tbcCodigo" prefWidth="80.0" text="Código" />
+            <TableColumn fx:id="tbcFecha" prefWidth="100.0" text="Fecha" />
+            <TableColumn fx:id="tbcEstudiante" prefWidth="180.0" text="Estudiante" />
+            <TableColumn fx:id="tbcCurso" prefWidth="200.0" text="Curso" />
+            <TableColumn fx:id="tbcTotal" prefWidth="130.0" text="Valor" />
+         </columns>
+      </TableView>
+      <Button onAction="#onVolver" text="← Volver al menú" />
+   </children>
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+</VBox>
