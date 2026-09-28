@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" spacing="14.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.co.uniquindio.lenguajecafetero.viewController.PrimaryController">
+   <children>
+      <Label text="Academia de idiomas LenguajeCafetero">
+         <font><Font name="System Bold" size="20.0" /></font>
+      </Label>
+      <Label fx:id="lblDatosAcademia" textAlignment="CENTER" wrapText="true" />
+      <Separator />
+      <Button maxWidth="260.0" onAction="#onOpenCrudEstudiante" text="Gestión de estudiantes" />
+      <Button maxWidth="260.0" onAction="#onOpenCrudProfesor" text="Gestión de profesores" />
+      <Button maxWidth="260.0" onAction="#onOpenCrudCurso" text="Gestión de cursos" />
+      <Button maxWidth="260.0" onAction="#onOpenCrudServicio" text="Servicios adicionales" />
+      <Button maxWidth="260.0" onAction="#onOpenCrudMatricula" text="Matrículas" />
+      <Button maxWidth="260.0" onAction="#onOpenReporteIngresos" text="Ingresos por periodo" />
+   </children>
+   <padding>
+      <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+   </padding>
+</VBox>

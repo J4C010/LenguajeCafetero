@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="10.0" prefWidth="1100.0" prefHeight="720.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.co.uniquindio.lenguajecafetero.viewController.MatriculaViewController">
+   <children>
+      <Label text="Matrículas">
+         <font><Font name="System Bold" size="18.0" /></font>
+      </Label>
+      <HBox spacing="16.0">
+         <children>
+            <GridPane hgap="10.0" vgap="8.0" HBox.hgrow="ALWAYS">
+               <columnConstraints>
+                  <ColumnConstraints minWidth="120.0" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+               </columnConstraints>
+               <children>
+                  <Label text="Código:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                  <TextField fx:id="txtCodigo" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                  <Label text="Fecha:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                  <DatePicker fx:id="dpFecha" maxWidth="Infinity" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                  <Label text="Estudiante:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                  <ComboBox fx:id="cbEstudiante" maxWidth="Infinity" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                  <Label text="Curso:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                  <ComboBox fx:id="cbCurso" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                  <Label text="Meses contratados:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                  <TextField fx:id="txtMeses" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                  <Label text="Profesor:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+                  <ComboBox fx:id="cbProfesor" maxWidth="Infinity" promptText="Solo cursos personalizados" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+                  <Label text="Descuento:" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+                  <ComboBox fx:id="cbDescuento" maxWidth="Infinity" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+            <VBox spacing="6.0" prefWidth="360.0">
+               <children>
+                  <Label text="Servicios adicionales (Ctrl + clic para varios):" />
+                  <ListView fx:id="lstServicios" prefHeight="200.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox spacing="10.0">
+         <children>
+            <Button onAction="#onCalcularValor" text="Calcular valor" />
+            <Button onAction="#onRegistrarMatricula" text="Registrar matrícula" />
+            <Button onAction="#onAgregarServicios" text="Agregar servicios a la matrícula seleccionada" />
+            <Button onAction="#onEliminar" text="Eliminar" />
+            <Button onAction="#onLimpiar" text="Limpiar" />
+         </children>
+      </HBox>
+      <Label fx:id="lblValor" style="-fx-font-weight: bold;" />
+      <TableView fx:id="tblListMatricula" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="tbcCodigo" prefWidth="70.0" text="Código" />
+            <TableColumn fx:id="tbcFecha" prefWidth="90.0" text="Fecha" />
+            <TableColumn fx:id="tbcEstudiante" prefWidth="150.0" text="Estudiante" />
+            <TableColumn fx:id="tbcCurso" prefWidth="200.0" text="Curso" />
+            <TableColumn fx:id="tbcMeses" prefWidth="60.0" text="Meses" />
+            <TableColumn fx:id="tbcProfesor" prefWidth="130.0" text="Profesor" />
+            <TableColumn fx:id="tbcServicios" prefWidth="180.0" text="Servicios" />
+            <TableColumn fx:id="tbcDescuento" prefWidth="120.0" text="Descuento" />
+            <TableColumn fx:id="tbcTotal" prefWidth="110.0" text="Total" />
+         </columns>
+      </TableView>
+      <Button onAction="#onVolver" text="← Volver al menú" />
+   </children>
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+</VBox>
