@@ -4,11 +4,7 @@ import java.time.LocalDate;
 import java.util.Collection;
 import java.util.LinkedList;
 
-/**
- * Academia LenguajeCafetero. Patrón Singleton: toda la aplicación comparte
- * una única instancia con los registros de estudiantes, profesores, cursos,
- * servicios adicionales y matrículas.
- */
+
 public class Academia {
 
     private static Academia instancia;

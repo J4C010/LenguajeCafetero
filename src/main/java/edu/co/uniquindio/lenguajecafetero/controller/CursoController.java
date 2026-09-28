@@ -19,7 +19,7 @@ public class CursoController {
         this.fabricaCursos = new FabricaCursos();
     }
 
-    /** Crea el curso con la fábrica correspondiente a su tipo y lo registra. */
+
     public boolean crearCurso(TipoCurso tipo, DatosCurso datos) {
         Curso curso = fabricaCursos.crearCurso(tipo, datos);
         return academia.agregarCurso(curso);

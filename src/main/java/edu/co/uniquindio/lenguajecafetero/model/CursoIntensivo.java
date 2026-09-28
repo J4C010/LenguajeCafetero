@@ -1,7 +1,7 @@
 package edu.co.uniquindio.lenguajecafetero.model;
 
 
-/** Curso con mayor intensidad horaria: se cobra un recargo sobre el valor mensual. */
+
 public class CursoIntensivo extends Curso {
 
     public static final double RECARGO_INTENSIDAD = 0.25;

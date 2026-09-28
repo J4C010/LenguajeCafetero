@@ -3,10 +3,6 @@ package edu.co.uniquindio.lenguajecafetero.model;
 
 import java.util.Objects;
 
-/**
- * Curso con sesiones uno a uno. El valor de las sesiones depende de la tarifa del
- * profesor asignado, por eso ese costo se agrega en la matrícula.
- */
 public class CursoPersonalizado extends Curso {
 
     private final int cantidadSesiones;

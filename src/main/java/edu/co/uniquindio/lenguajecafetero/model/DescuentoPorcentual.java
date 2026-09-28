@@ -1,6 +1,6 @@
 package edu.co.uniquindio.lenguajecafetero.model;
 
-/** Descuento fijo en porcentaje (ej.: convenio empresarial, promoción). */
+
 public class DescuentoPorcentual implements PoliticaDescuento {
 
     private final double porcentaje;

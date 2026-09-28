@@ -3,10 +3,7 @@ package edu.co.uniquindio.lenguajecafetero.model;
 import java.util.EnumMap;
 import java.util.Map;
 
-/**
- * Punto único de creación de cursos. Para agregar un tipo nuevo basta con registrar
- * su fábrica (OCP): no hay switch ni if por tipo en el resto del sistema.
- */
+
 public class FabricaCursos {
 
     private final Map<TipoCurso, CursoFactory> fabricas = new EnumMap<>(TipoCurso.class);

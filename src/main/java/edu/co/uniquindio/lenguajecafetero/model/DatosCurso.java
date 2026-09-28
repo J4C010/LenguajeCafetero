@@ -4,10 +4,7 @@ package edu.co.uniquindio.lenguajecafetero.model;
 import java.util.EnumSet;
 import java.util.Set;
 
-/**
- * Objeto de parámetros para crear cursos. Se construye con el patrón Builder
- * para no tener constructores con muchos parámetros opcionales.
- */
+
 public final class DatosCurso {
 
     private final String codigo;

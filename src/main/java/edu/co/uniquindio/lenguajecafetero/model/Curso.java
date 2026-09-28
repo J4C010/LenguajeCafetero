@@ -6,10 +6,7 @@ import java.util.EnumSet;
 import java.util.Objects;
 import java.util.Set;
 
-/**
- * Curso ofrecido por la academia. Cada subtipo define cómo se calcula su valor
- * (polimorfismo: se pueden agregar tipos nuevos sin modificar Matricula — OCP/LSP).
- */
+
 public abstract class Curso {
 
     private final String codigo;

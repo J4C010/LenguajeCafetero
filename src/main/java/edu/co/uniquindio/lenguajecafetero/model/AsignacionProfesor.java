@@ -3,11 +3,6 @@ package edu.co.uniquindio.lenguajecafetero.model;
 import java.time.LocalDate;
 import java.util.Objects;
 
-/**
- * Relaciona al profesor responsable con una matrícula de curso personalizado.
- * Como la matrícula ya conoce al estudiante y al curso, desde la asignación se puede
- * identificar la terna estudiante – curso – profesor.
- */
 public class AsignacionProfesor {
 
     private final Matricula matricula;
